@@ -46,6 +46,10 @@ public class AddProduct extends HttpServlet {
 			 preparedStmt.setString(2, name);
 			 
 			 preparedStmt.executeUpdate();
+			 
+			 preparedStmt.close();
+			 dbConnection.releaseConnection();
+			 
 			 request.getRequestDispatcher("index.html").include(request, response);
 			 out.println("<h1 style='color:green'>update Successful</h1>");
 			 
